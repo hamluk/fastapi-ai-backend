@@ -1,15 +1,11 @@
 from pathlib import Path
 
 import yaml
-from pydantic import BaseModel
+
+from app.models.prompt import AIAgentPrompt
 
 
-class ChatModelPrompt(BaseModel):
-    system: str
-    human: str
-
-
-def load_prompt_messages(prompt_files_path: str, version: str) -> ChatModelPrompt:
+def load_prompt_messages(prompt_files_path: str, version: str) -> AIAgentPrompt:
     """
     Loads system an human prompt stored in a yaml file.
 
@@ -22,7 +18,6 @@ def load_prompt_messages(prompt_files_path: str, version: str) -> ChatModelPromp
     with path.open("r", encoding="utf-8") as f:
         data = yaml.safe_load(f)
 
-    return ChatModelPrompt(
-        system=data["system"],
-        human=data["human"]
+    return AIAgentPrompt(
+        system=data["system"]
     )

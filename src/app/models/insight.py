@@ -11,6 +11,7 @@ class Metadata(BaseModel):
 class Insight(BaseModel):
     title: str
     summary: str
+    key_points: List[str]
     confidence: float
     metadata: List[Metadata]
 

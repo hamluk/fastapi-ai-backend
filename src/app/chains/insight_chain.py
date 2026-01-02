@@ -4,11 +4,11 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.vectorstores import VectorStoreRetriever
 
 from app.models.insight import Insight
-from app.prompts.loader import ChatModelPrompt
+from app.prompts.loader import AIAgentPrompt
 
 
 def run_rag_insight_chain(
-        prompt_messages: ChatModelPrompt,
+        prompt_messages: AIAgentPrompt,
         llm: BaseChatModel,
         retriever: VectorStoreRetriever,
         question: str

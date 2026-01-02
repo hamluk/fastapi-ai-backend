@@ -22,6 +22,7 @@ class QdrantVectorStoreSettings(BaseModel):
     distance: Distance
     embedding_model: str
     k: int
+    similarity_threshold: float
 
 
 class Settings(BaseSettings):

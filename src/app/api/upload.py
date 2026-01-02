@@ -1,6 +1,6 @@
 from uuid import uuid4
 
-from fastapi import APIRouter, UploadFile, File, HTTPException
+from fastapi import APIRouter, HTTPException
 from fastapi.params import Depends
 from langchain_qdrant import QdrantVectorStore
 
