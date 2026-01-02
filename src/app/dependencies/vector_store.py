@@ -1,4 +1,5 @@
 from fastapi import Depends
+from langchain_core.vectorstores import VectorStore
 from langchain_openai import OpenAIEmbeddings
 from langchain_qdrant import QdrantVectorStore
 from qdrant_client import QdrantClient
@@ -11,7 +12,7 @@ def get_openai_embeddings(embedding_model: str, api_key) -> OpenAIEmbeddings:
     return OpenAIEmbeddings(model=embedding_model, api_key=api_key)
 
 
-def init_qdrant_vector_store(settings: Settings = Depends(get_settings)):
+def init_qdrant_vector_store(settings: Settings = Depends(get_settings)) -> VectorStore:
     embeddings = get_openai_embeddings(settings.qdrant_vector_store.embedding_model, settings.openai_model.api_key)
 
     client = QdrantClient(path=settings.qdrant_vector_store.path)

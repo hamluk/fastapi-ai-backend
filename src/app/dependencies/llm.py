@@ -1,10 +1,11 @@
 from fastapi import Depends
+from langchain_core.language_models import BaseChatModel
 from langchain_openai import ChatOpenAI
 
 from app.settings import get_settings, Settings
 
 
-def init_openai_chat_model(settings: Settings = Depends(get_settings)):
+def init_openai_chat_model(settings: Settings = Depends(get_settings)) -> BaseChatModel:
     """
     Initializes and returns the LangChain OpenAI chat model
 

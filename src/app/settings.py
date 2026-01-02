@@ -21,6 +21,7 @@ class QdrantVectorStoreSettings(BaseModel):
     vector_size: int
     distance: Distance
     embedding_model: str
+    k: int
 
 
 class Settings(BaseSettings):

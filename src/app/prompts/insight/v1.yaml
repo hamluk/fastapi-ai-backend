@@ -8,8 +8,6 @@ system: |
 human: |
   Question:
   {question}
-
-Context: |
+  
+  Context:
   {context}
-
-  Provide a concise insight.

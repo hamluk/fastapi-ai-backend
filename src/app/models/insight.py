@@ -1,10 +1,18 @@
+from typing import List
+
 from pydantic import field_validator, BaseModel
+
+
+class Metadata(BaseModel):
+    chunk_id: str
+    title: str
 
 
 class Insight(BaseModel):
     title: str
     summary: str
     confidence: float
+    metadata: List[Metadata]
 
     @field_validator("confidence")
     @classmethod
