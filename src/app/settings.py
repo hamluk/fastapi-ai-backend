@@ -1,6 +1,7 @@
 from anyio.functools import lru_cache
 from pydantic import BaseModel
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from qdrant_client.http.models import Distance
 
 
 class Prompt(BaseModel):
@@ -8,10 +9,18 @@ class Prompt(BaseModel):
     insight_version: str
 
 
-class OpenAiModel(BaseModel):
+class OpenAiModelSettings(BaseModel):
     model_name: str
     api_key: str
     temperature: float
+
+
+class QdrantVectorStoreSettings(BaseModel):
+    path: str
+    collection_name: str
+    vector_size: int
+    distance: Distance
+    embedding_model: str
 
 
 class Settings(BaseSettings):
@@ -24,8 +33,9 @@ class Settings(BaseSettings):
     app_host: str
     app_port: int
 
-    openai_model: OpenAiModel
+    openai_model: OpenAiModelSettings
     prompt: Prompt
+    qdrant_vector_store: QdrantVectorStoreSettings
 
 
 @lru_cache()

@@ -1,9 +1,10 @@
 from fastapi import FastAPI
 
-from app.api import insight
+from app.api import insight, upload
 
 app = FastAPI(title="fastapi-ai-backend")
 app.include_router(insight.router, prefix="/insight")
+app.include_router(upload.router, prefix="/upload")
 
 
 @app.get("/")
