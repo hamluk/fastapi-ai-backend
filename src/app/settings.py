@@ -3,18 +3,29 @@ from pydantic import BaseModel
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
+class Prompt(BaseModel):
+    insight_path: str
+    insight_version: str
+
+
 class OpenAiModel(BaseModel):
     model_name: str
-    temperature: int
+    api_key: str
+    temperature: float
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", env_nested_delimiter="__")
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        env_nested_delimiter="__"
+    )
 
     app_host: str
     app_port: int
 
-    openai_model = OpenAiModel
+    openai_model: OpenAiModel
+    prompt: Prompt
 
 
 @lru_cache()

@@ -1,9 +1,7 @@
-from uuid import uuid4
-from pydantic import Field, field_validator, BaseModel
+from pydantic import field_validator, BaseModel
 
 
 class Insight(BaseModel):
-    id: str = Field(default_factory=lambda: str(uuid4()))
     title: str
     summary: str
     confidence: float
