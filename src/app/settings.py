@@ -44,6 +44,7 @@ class Settings(BaseSettings):
 def get_settings() -> Settings:
     """
     Getter function for app settings
+
     :return: runtime app settings
     """
     return Settings()

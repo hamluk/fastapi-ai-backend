@@ -14,7 +14,19 @@ def get_insight_agent(
         llm: BaseChatModel = Depends(init_openai_chat_model),
         vector_store: VectorStore = Depends(init_qdrant_vector_store),
         settings: Settings = Depends(get_settings)
-):
+) -> InsightAgent:
+    """
+    FastAPI dependency that constructs and returns a fully wired InsightAgent.
+
+    This function acts as the composition root for the InsightAgent by:
+    - injecting the language model,
+    - initializing the retriever with the configured vector store,
+    - loading the agent prompt configuration,
+    - and assembling these components into a single agent instance.
+
+    :return: InsightAgent instance
+    """
+
     retriever = InsightRetriever(vector_store, settings)
     prompt_messages = load_prompt_messages(settings.prompt.insight_path, settings.prompt.insight_version)
     return InsightAgent(llm, retriever, prompt_messages)

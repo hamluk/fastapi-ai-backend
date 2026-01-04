@@ -14,7 +14,7 @@ def run_rag_insight_chain(
         question: str
 ) -> Insight:
     """
-    Builds and runs the LangChain insight chain
+    Builds and runs the LangChain insight chain. Only used in the branches part-2 and part-3
 
     :param retriever:
     :param prompt_messages: Prompt system and human messages
