@@ -29,7 +29,6 @@ def create_insight(
     :param llm: Language Model object
     :return:
     """
-
     prompt_messages = load_prompt_messages(
         settings.prompt.insight_path,
         settings.prompt.insight_version

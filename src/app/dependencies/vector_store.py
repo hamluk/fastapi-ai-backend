@@ -9,10 +9,32 @@ from app.settings import get_settings, Settings
 
 
 def get_openai_embeddings(embedding_model: str, api_key) -> OpenAIEmbeddings:
+    """
+    Create and return an OpenAI embedding model instance.
+
+    This function encapsulates embedding model initialization to keep
+    vector store setup explicit and configurable. It allows embedding
+    models to be swapped or adjusted without modifying retrieval logic.
+
+    :param embedding_model: Name of the OpenAI embedding model to use
+    :param api_key: OpenAI API key used for embedding generation
+    :return: Initialized OpenAIEmbeddings instance
+    """
     return OpenAIEmbeddings(model=embedding_model, api_key=api_key)
 
 
 def init_qdrant_vector_store(settings: Settings = Depends(get_settings)) -> VectorStore:
+    """
+    Initialize and return the vector store used for retrieval.
+
+    This dependency is responsible for:
+    - creating the embedding model,
+    - ensuring the Qdrant collection exists,
+    - and returning a fully configured vector store abstraction.
+
+    :param settings: Application settings containing vector store configuration
+    :return: Configured VectorStore instance backed by Qdrant
+    """
     embeddings = get_openai_embeddings(settings.qdrant_vector_store.embedding_model, settings.openai_model.api_key)
 
     client = QdrantClient(path=settings.qdrant_vector_store.path)
