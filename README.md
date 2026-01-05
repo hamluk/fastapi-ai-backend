@@ -17,8 +17,8 @@ Throughout the repository and the accompanying articles, a concrete example call
 | ---- | ------------------------------------ | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | 1️⃣   | **Building Production-Ready AI Backends with FastAPI** | [Read on dev.to](https://dev.to/hamluk/building-production-ready-ai-backends-with-fastapi-4352) | - |
 | 2️⃣   | **From LangChain Demos to a Production-Ready FastAPI Backend** | [Read on dev.to](https://dev.to/hamluk/from-langchain-demos-to-a-production-ready-fastapi-backend-1c0a) | [Branch: part-2](https://github.com/hamluk/fastapi-ai-backend/tree/part-2) |
-| 3️⃣   | _coming soon_ | - | - |
-| 4️⃣   | _coming soon_ | - | - |
+| 3️⃣   | **Building Production-Ready RAG in FastAPI with Vector Databases** | [Read on dev.to](https://dev.to/hamluk/building-production-ready-rag-in-fastapi-with-vector-databases-39gf) | [Branch: part-3](https://github.com/hamluk/fastapi-ai-backend/tree/part-3) |
+| 4️⃣   | **Introducing AI Agents as Backend Services** | _coming soon_ | [Branch: part-4](https://github.com/hamluk/fastapi-ai-backend/tree/part-4) |
 
 ---
 
