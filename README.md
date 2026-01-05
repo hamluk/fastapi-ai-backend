@@ -11,6 +11,17 @@ Throughout the repository and the accompanying articles, a concrete example call
 
 ---
 
+## 📂 Series Overview
+
+| Part | Title                                | Blog Post                                                                                                   | Code                                                                    |
+| ---- | ------------------------------------ | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| 1️⃣   | **Building Production-Ready AI Backends with FastAPI** | [Read on dev.to](https://dev.to/hamluk/building-production-ready-ai-backends-with-fastapi-4352) | - |
+| 2️⃣   | **From LangChain Demos to a Production-Ready FastAPI Backend** | [Read on dev.to](https://dev.to/hamluk/from-langchain-demos-to-a-production-ready-fastapi-backend-1c0a) | [Branch: part-2](https://github.com/hamluk/fastapi-ai-backend/tree/part-2) |
+| 3️⃣   | _coming soon_ | - | - |
+| 4️⃣   | _coming soon_ | - | - |
+
+---
+
 ## 🧭 Branches & Learning Path
 
 This repository is structured as a progressive learning path that mirrors the accompanying article series on dev.to  
